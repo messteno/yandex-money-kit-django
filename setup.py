@@ -13,10 +13,10 @@ setup(
     name='django-yandex-money',
     version=__version__,
     packages=find_packages(),
-    url='https://github.com/yandex-money/yandex-money-kit-django',
+    url='https://github.com/messteno/yandex-money-kit-django',
     license='MIT',
     author=__author__,
-    author_email='cms@yamoney.ru',
+    author_email='messteno@gmail.com',
     keywords=['django', 'yandex', 'money', 'payment', 'pay'],
     description='Integrating django project with yandex-money',
     classifiers=[
@@ -33,7 +33,6 @@ setup(
     ],
     install_requires=[
         'Django>=1.4',
-        'South>=0.7.5',
         'lxml>=2.3.4',
     ],
 )
