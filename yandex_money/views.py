@@ -143,7 +143,7 @@ class NoticeFormView(BaseView):
         payment.cps_phone = cd.get('cps_phone', '')
         payment.order_currency = cd.get('orderSumCurrencyPaycash')
         payment.shop_amount = cd.get('shopSumAmount')
-        payment.shop_currency = cd.get('shopSumCurrencyPaycash')
+        payment.shop_currency = cd.get('shopSumCurrencyPaycash', '')
         payment.payer_code = cd.get('paymentPayerCode')
         payment.payment_type = cd.get('paymentType')
         payment.status = payment.STATUS.SUCCESS
