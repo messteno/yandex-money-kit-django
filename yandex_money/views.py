@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import json
 import logging
 from datetime import datetime
 
@@ -58,7 +57,7 @@ class BaseView(View):
         else:
             params = {'code': '200'}
 
-        self.logging(request, params, errors)
+        self.logging(request, params)
         content = self.get_xml(params)
 
         if (
@@ -109,11 +108,10 @@ class BaseView(View):
     def get_xml_element(self, **params):
         raise NotImplementedError()
 
-    def logging(self, request, params, errors):
-        message = 'Action %s has code %s for customerNumber "%s", errors: %s' % (
+    def logging(self, request, params):
+        message = 'Action %s has code %s for customerNumber "%s"' % (
             request.POST.get('action', ''), params['code'],
-            request.POST.get('customerNumber', ''),
-            json.dumps(errors, ensure_ascii=False))
+            request.POST.get('customerNumber', ''))
         logger.info(message)
 
 
